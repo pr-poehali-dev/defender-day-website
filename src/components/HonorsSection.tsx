@@ -34,46 +34,32 @@ const awards = [
 
 const HonorsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-patriot-gold/5 to-patriot-blue/10 relative">
-      {/* Patriotic decorative stripes */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-patriot-red via-white to-patriot-blue"></div>
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-patriot-blue via-white to-patriot-red"></div>
-
+    <section className="py-20 bg-gradient-to-b from-white to-slate-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-4 mb-6">
-            <span className="text-5xl">🏆</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 font-montserrat">
-              Награды и Почести Отечества
-            </h2>
-            <span className="text-5xl">🏆</span>
-          </div>
-
-          <div className="bg-gradient-to-r from-patriot-red via-patriot-gold to-patriot-blue p-1 rounded-lg inline-block mb-4">
-            <div className="bg-white px-6 py-3 rounded-lg">
-              <p className="text-lg font-bold text-patriot-red font-montserrat">
-                🇷🇺 СЛАВА И ЧЕСТЬ ЗАЩИТНИКАМ РОДИНЫ! 🇷🇺
-              </p>
-            </div>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-montserrat">
+            Награды и Почести
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-open-sans">
+            Миллионы советских воинов были отмечены государственными наградами
+            за мужество и героизм.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {awards.map((award, index) => (
             <div
-              key={index}
-              className="bg-white rounded-xl shadow-xl p-8 text-center transform hover:scale-105 transition-all duration-300 border-t-4 border-patriot-red relative overflow-hidden"
+              key={award.title}
+              className="bg-white rounded-xl shadow-lg p-8 text-center transform hover:scale-105 transition-all duration-300 border-t-4 border-red-500"
             >
-              {/* Patriotic corner decoration */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-patriot-gold/20 to-patriot-blue/20 transform rotate-45 translate-x-10 -translate-y-10"></div>
-              <div className="absolute top-2 right-2 text-patriot-gold text-sm">
-                ⭐
-              </div>
-
               <div
-                className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${award.color} flex items-center justify-center text-white shadow-lg`}
+                className={`inline-flex p-4 rounded-full bg-gradient-to-br ${award.color} mb-6`}
               >
-                <Icon name={award.icon} size={24} />
+                <Icon
+                  name={award.icon as any}
+                  size={32}
+                  className="text-white"
+                />
               </div>
 
               <div className="text-3xl font-bold text-slate-800 mb-2 font-montserrat">
@@ -89,33 +75,24 @@ const HonorsSection = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red rounded-2xl p-8 text-white text-center relative overflow-hidden border-4 border-patriot-gold">
-          {/* Patriotic background elements */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-4 left-4 text-6xl">🇷🇺</div>
-            <div className="absolute top-4 right-4 text-6xl">🦅</div>
-            <div className="absolute bottom-4 left-4 text-4xl">👑</div>
-            <div className="absolute bottom-4 right-4 text-4xl">🛡️</div>
-          </div>
-
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <Icon name="Heart" size={48} className="text-patriot-gold" />
-              <span className="text-4xl">🕯️</span>
-            </div>
-            <h3 className="text-3xl font-bold mb-4 font-montserrat text-patriot-gold">
-              Вечная Память Героям
-            </h3>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto mb-6 font-open-sans">
-              Мы помним каждого, кто отдал свою жизнь за нашу свободу. Их подвиг
-              будет жить в веках, а память о них передаваться из поколения в
-              поколение.
-            </p>
-            <button className="bg-gradient-to-r from-patriot-gold to-yellow-400 hover:from-yellow-400 hover:to-patriot-gold text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-patriot-gold">
-              <Icon name="Flame" size={20} className="inline mr-2" />
-              Зажечь свечу памяти
-            </button>
-          </div>
+        <div className="bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl p-8 text-white text-center">
+          <Icon
+            name="Heart"
+            size={48}
+            className="text-yellow-400 mx-auto mb-6"
+          />
+          <h3 className="text-3xl font-bold mb-4 font-montserrat">
+            Вечная Память
+          </h3>
+          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-6 font-open-sans">
+            Мы помним каждого, кто отдал свою жизнь за нашу свободу. Их подвиг
+            будет жить в веках, а память о них передаваться из поколения в
+            поколение.
+          </p>
+          <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <Icon name="Flame" size={20} className="inline mr-2" />
+            Зажечь свечу памяти
+          </button>
         </div>
       </div>
     </section>
