@@ -34,47 +34,67 @@ const heroes = [
 
 const DefendersGallery = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-900 to-red-900 text-white">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-gradient-to-b from-patriot-blue via-slate-900 to-patriot-red text-white relative">
+      {/* Patriotic background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 text-8xl">🦅</div>
+        <div className="absolute top-32 right-20 text-6xl">👑</div>
+        <div className="absolute bottom-20 left-16 text-7xl">🛡️</div>
+        <div className="absolute bottom-32 right-12 text-5xl">⚔️</div>
+        <div className="absolute top-1/2 left-1/4 text-4xl">🇷🇺</div>
+        <div className="absolute top-1/3 right-1/3 text-6xl">🏆</div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-montserrat">
-            Галерея Героев
-          </h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto font-open-sans">
-            Они отдали свои жизни за наше будущее. Их имена навсегда останутся в
-            наших сердцах.
-          </p>
+          <div className="inline-flex items-center gap-4 mb-6">
+            <span className="text-5xl">🏅</span>
+            <h2 className="text-4xl md:text-5xl font-bold font-montserrat">
+              Галерея Героев Отечества
+            </h2>
+            <span className="text-5xl">🏅</span>
+          </div>
+
+          <div className="bg-gradient-to-r from-patriot-gold via-white to-patriot-gold p-1 rounded-lg inline-block mb-4">
+            <div className="bg-patriot-red px-6 py-3 rounded-lg">
+              <p className="text-lg font-bold text-patriot-gold font-montserrat">
+                🇷🇺 НИКТО НЕ ЗАБЫТ, НИЧТО НЕ ЗАБЫТО! 🇷🇺
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {heroes.map((hero, index) => (
             <div
               key={hero.name}
-              className="group bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center transform hover:scale-105 transition-all duration-500 border border-white/20 hover:bg-white/20"
+              className="group bg-gradient-to-br from-black/40 via-patriot-blue/20 to-black/40 backdrop-blur-sm rounded-lg p-6 text-center transform hover:scale-105 transition-all duration-500 border-2 border-patriot-gold/50 hover:border-patriot-gold hover:bg-patriot-gold/10"
             >
               <div className="relative mb-6">
                 <img
                   src={hero.image}
                   alt={hero.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-400 group-hover:border-yellow-300 transition-colors duration-300"
+                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-patriot-gold group-hover:border-white transition-colors duration-300 shadow-xl"
                 />
-                <div className="absolute -top-2 -right-2 bg-yellow-400 rounded-full p-2">
-                  <Icon name="Star" size={16} className="text-yellow-900" />
+                <div className="absolute -top-2 -right-2 bg-gradient-to-br from-patriot-gold to-yellow-400 rounded-full p-2 border-2 border-white shadow-lg">
+                  <Icon name="Star" size={16} className="text-patriot-red" />
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold mb-2 text-yellow-400 font-montserrat">
+              <h3 className="text-xl font-bold mb-2 text-patriot-gold font-montserrat">
                 {hero.name}
               </h3>
-              <p className="text-sm text-yellow-200 mb-3 font-semibold">
+              <p className="text-sm text-patriot-gold/80 mb-3 font-semibold">
                 {hero.role}
               </p>
               <p className="text-sm opacity-80 leading-relaxed font-open-sans">
                 {hero.description}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-white/20">
-                <button className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold transition-colors duration-300">
+              <div className="mt-4 pt-4 border-t border-patriot-gold/30">
+                <button className="text-patriot-gold hover:text-white text-sm font-semibold transition-colors duration-300">
+                  <Icon name="ExternalLink" size={14} className="inline mr-1" />
+                  Подвиг героя
                   <Icon name="ExternalLink" size={14} className="inline mr-1" />
                   Подробнее
                 </button>
@@ -84,9 +104,9 @@ const DefendersGallery = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="bg-gradient-to-r from-patriot-gold to-yellow-400 hover:from-yellow-400 hover:to-patriot-gold text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-patriot-gold">
             <Icon name="Users" size={20} className="inline mr-2" />
-            Все герои
+            Все герои Отечества
           </button>
         </div>
       </div>
